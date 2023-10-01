@@ -1,5 +1,5 @@
-# NYCslice Django Project
- NYCslice is a web application that generates a day in NYC based on user preferences and Yelp's API
+# Slice of NYC Django Project
+ Slice of NYC is a web application that generates a day in NYC based on user preferences and Yelp's API
 
 
 ## Project Structure
