@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="plan-container">
+    <h1>Lets start planning!</h1>
+    <hr>
+    <p>First, let's answer a couple of questions about what you want to do today:</p>
+
+    <form method="POST" class="questions">
+        {% csrf_token %}
+        <label for="dateofplan">Pick the date you want to plan for:</label>
+        <input type="date" name="dateofplan" id="dateofplan" required>
+        
+        <label for="start-time">Between which times are you free?</label>
+        <input type="time" name="start-time" id="start-time" required>
+        <span>to</span>
+        <input type="time" name="end-time" id="end-time" required>
+        
+        <button type="submit">Next</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="plan-container">
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Which borough would you like to explore?</h1>
+    <hr>
+    <br>
+    <form method="POST" class="questions">
+        {% csrf_token %}
+        <label>Select a borough to explore:</label>
+        <br>
+        <label>
+            <input type="radio" name="borough" value="Brooklyn">Brooklyn
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="borough" value="Manhattan">Manhattan
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="borough" value="Queens">Queens
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="borough" value="Bronx">Bronx
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="borough" value="Staten Island">The Other One
+        </label>
+        <br>
+        <button type="submit">Plan My Day!</button>
+    </form>
+</div>
+{% endblock %}

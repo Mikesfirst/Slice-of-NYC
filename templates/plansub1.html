@@ -1,0 +1,31 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="plan-container">
+    <h1>Lets talk money...!</h1>
+    <hr>
+    <br>
+    <form method="POST" class="questions">
+        {% csrf_token %}
+        <label for="budget">What is the most amount you are willing to spend?</label>
+        <br>
+        <input type="number" name="budget" id="budget" required>
+        <br>
+        <br>
+        <label>Will you be hungry?</label>
+        <br>
+        <label>
+            <input type="radio" name="hunger" required>No Food
+        </label>
+        <label>
+            <input type="radio" name="hunger" value="Light Snack" required>I could grab a small bite
+        </label>
+        <label>
+            <input type="radio" name="hunger" value="Dessert" >Maybe something sweet
+        </label>
+        <label>
+            <input type="radio" name="hunger" value="Full Dining" required>Would like a meal
+        </label>
+        <button type="submit">Next</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'main.html' %}
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1 class="register-heading">Lets Create Your Profile</h1>
+<br>
+<br>
+<form method="POST" action="{% url 'register' %}" class="register-form">
+    {% csrf_token %}
+<label for="username">Username: </label>
+<input type="text" name="username" placeholder="Enter Username">
+<br>
+<label for="password1">Password: </label>
+<input type="password" name="password1" placeholder="Enter Password">
+<br>
+<label for="password2">Confirm Password: </label>
+<input type="password" name="password2" placeholder="Enter Password">
+<br>
+<input type="submit" value="Register">
+{% if form.errors %}
+  <div class="errors">
+    <ul>
+      {% for field in form %}
+        {% for error in field.errors %}
+          <li>{{ error }}</li>
+        {% endfor %}
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
+</form>
+
+{% endblock content %}

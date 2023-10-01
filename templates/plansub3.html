@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="plan-container">
+    <hr>
+    <br>
+    <br>
+    <h1 class="plan-heading">ENJOY YOUR DAY!</h1>
+    {% for x in plan %}
+    <h2>{{ x.0 }}</h2> <br>
+    <img class="plan-images" src="{{ x.3 }}" alt="{{ x.4 }}">
+    <p><strong>Address:</strong> {{ x.1 }}</p> <br>
+    <p><strong>Price level:</strong> {{ x.2 }}</p> <br>
+    {% endfor %}
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" class="profile-button">Try Again</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="profile-container">
+    <form method="POST" class="profile-form">
+        {% csrf_token %}
+        {% if profile.name == None %}
+        <h1>Create Your Profile</h1>
+        {% else %}
+        <h1 class="head-of-page">Profile</h1>
+        {% endif %}
+        <br>
+        <label for="name">Name</label>
+        <input type="text" name="name" value="{{ profile.name }}" class="profile-input" required>
+        <label for="email">Email</label>
+        <input type="email" name="email" value="{{ profile.email }}" class="profile-input" required>
+        <label for="birthday">Birthday</label>
+        <input type="date" name="birthday" value="{{ profile.birthday }}" class="profile-input" required>        
+        <hr>
+        <h3>Favorite Food</h3>
+        <div class="profile-checkboxes">
+            {% for food in cuisine %}
+            <label class="checkbox-box" >
+                <input type="checkbox" name="food" value="{{ food }}" {% if food in profile.food_pref %}checked{% endif %}>
+                {{ food }}
+            </label>
+            {% endfor %}
+        </div>
+        <hr>
+        <h3>Hobbies and Interests</h3>
+        <div class="profile-checkboxes">
+            {% for interest in interests %}
+            <label class="checkbox-box">
+                <input type="checkbox" name="selected_interests" value="{{ interest }}" {% if interest in profile.interests %}checked{% endif %}>
+                {{ interest }}
+            </label>
+            {% endfor %}
+        </div>
+        <button type="submit" class="profile-button">Save Profile</button>
+        <button class="profile-button"><a href="{% url 'logout' %}">Logout</a></button>
+    </form>
+</div>
+{% endblock content %}

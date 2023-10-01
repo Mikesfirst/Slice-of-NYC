@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="homepage">
+    <div class="hero">
+            <div class="overlay"></div>
+            <div class="content">
+                <h1>Welcome to Slice Of NYC</h1>
+                <p>Your Ultimate Guide to Exploring New York City</p>
+                <a class="cta-button" {% if profile.name %}href="{% url 'plan' %}"
+                {% else %}href="{% url 'login' %}" {% endif %}>Get Started</a>
+            </div>
+    </div>
+    <div class="features">
+        <div class="feature">
+            <i class="icon fa fa-map-marker"></i>
+            <h2>Plan Your Day</h2>
+            <p>Discover the best activities and places to visit in NYC.</p>
+        </div>
+        <div class="feature">
+            <i class="icon fa fa-money"></i>
+            <h2>Stay on Budget</h2>
+            <p>Set your budget and find activities that match your spending limit.</p>
+        </div>
+        <div class="feature">
+            <i class="icon fa fa-utensils"></i>
+            <h2>Find Dining Spots</h2>
+            <p>Explore NYC's culinary scene with our restaurant recommendations.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

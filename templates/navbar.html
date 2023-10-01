@@ -1,0 +1,18 @@
+{% load static %}  
+
+<div class="navbar">
+    <a href="{% url 'home' %}" class="navbar-logo">
+    <img class="logo" src="{% static 'images/logo.png' %}" alt="NYCSlice Logo">
+      <span class="navbar-title">Slice Of NYC</span>
+    </a>
+    <ul class="nav-links">
+      {% if profile == None %}
+        <li><a href="{% url 'login' %}">Login</a></li>
+      {% else %}
+        <li><a href="{% url 'profile' %}">Profile</a></li>
+      {% endif %}
+    </ul>
+  </div>
+  
+
+
