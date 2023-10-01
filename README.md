@@ -42,9 +42,3 @@ To run the NYCslice Django project, follow these steps:
 
 - The project structure follows a typical Django setup with static files, templates, and app-specific files.
 - Ensure you have Python and pip installed before running the project.
-- [Add any additional notes or instructions here]
-
-Feel free to modify this README file according to your specific project details.
-```
-
-This template provides a basic structure for a README file. You can customize it further based on additional details or specific instructions for running your project.
